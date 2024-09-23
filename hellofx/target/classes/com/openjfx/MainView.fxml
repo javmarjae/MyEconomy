@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.openjfx.controllers.MainController" spacing="10">
+    <!-- Title -->
+    <Label text="Gestión de Ingresos y Gastos" style="-fx-font-size: 24px;" />
+
+    <!-- Spend -->
+    <TableView fx:id="tableSpend">
+        <columns>
+            <TableColumn text="ID" fx:id="colIdSpend" />
+            <TableColumn text="Name" fx:id="colNameSpend" />
+            <TableColumn text="Money" fx:id="colMoneySpend" />
+            <TableColumn text="Date" fx:id="colDateSpend" />
+            <TableColumn text="Tag" fx:id="colTagSpend" />
+            <TableColumn text="Quantity" fx:id="colQuantitySpend" />
+        </columns>
+    </TableView>
+
+    <!-- Income -->
+    <TableView fx:id="tableIncome">
+        <columns>
+            <TableColumn text="ID" fx:id="colIdIncome" />
+            <TableColumn text="Name" fx:id="colNameIncome" />
+            <TableColumn text="Money" fx:id="colMoneyIncome" />
+            <TableColumn text="Date" fx:id="colDateIncome" />
+            <TableColumn text="Tag" fx:id="colTagIncome" />
+        </columns>
+    </TableView>
+
+    <!-- Add buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Añadir Gasto" onAction="#onAddSpend" />
+        <Button text="Añadir Ingreso" onAction="#onAddIncome" />
+        <Button text="Añadir Etiqueta" onAction="#onAddTag" />
+    </HBox>
+</VBox>

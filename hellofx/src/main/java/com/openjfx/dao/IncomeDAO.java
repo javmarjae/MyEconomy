@@ -1,4 +1,4 @@
-package com.openjfx.classes;
+package com.openjfx.dao;
 
 import com.openjfx.models.Tag;
 import com.openjfx.models.Income;
