@@ -4,6 +4,8 @@ D:\MyEconomy\hellofx\src\main\java\com\openjfx\dao\IncomeDAO.java
 D:\MyEconomy\hellofx\src\main\java\com\openjfx\models\Spend.java
 D:\MyEconomy\hellofx\src\main\java\com\openjfx\controllers\MainController.java
 D:\MyEconomy\hellofx\src\main\java\com\openjfx\models\Database.java
+D:\MyEconomy\hellofx\src\main\java\com\openjfx\controllers\AddIncomeController.java
 D:\MyEconomy\hellofx\src\main\java\com\openjfx\dao\TagDAO.java
 D:\MyEconomy\hellofx\src\main\java\com\openjfx\models\Income.java
+D:\MyEconomy\hellofx\src\main\java\com\openjfx\controllers\AddTagController.java
 D:\MyEconomy\hellofx\src\main\java\com\openjfx\models\Tag.java

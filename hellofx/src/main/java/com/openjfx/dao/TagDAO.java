@@ -87,4 +87,22 @@ public class TagDAO {
         }
         return tag;
     }
+
+    public static int getTagIdByName(String name) {
+        String sql = "SELECT id FROM tags WHERE name = ?";
+        int tagId = 0;
+
+        try (Connection conn = Database.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                tagId = rs.getInt("id");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return tagId;
+    }
 }

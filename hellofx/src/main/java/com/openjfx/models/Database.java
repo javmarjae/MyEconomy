@@ -24,7 +24,7 @@ public class Database {
     // If the database does not exists it is created
     public static void createTable() {
         String sqlTags = "CREATE TABLE IF NOT EXISTS tags (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "name TEXT NOT NULL, color TEXT NOT NULL);";
+                + "name TEXT NOT NULL UNIQUE, color TEXT NOT NULL);";
 
         String sqlSpends = "CREATE TABLE IF NOT EXISTS spends (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "name TEXT NOT NULL, money REAL NOT NULL, "

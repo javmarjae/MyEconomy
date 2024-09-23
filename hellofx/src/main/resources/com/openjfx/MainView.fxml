@@ -9,25 +9,25 @@
     <Label text="MyEconomy" style="-fx-font-size: 24px;" />
 
     <!-- Spend -->
-    <TableView fx:id="tableSpend">
+    <TableView fx:id="tableSpend" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn text="ID" fx:id="colIdSpend" />
-            <TableColumn text="Name" fx:id="colNameSpend" />
-            <TableColumn text="Money" fx:id="colMoneySpend" />
-            <TableColumn text="Date" fx:id="colDateSpend" />
-            <TableColumn text="Tag" fx:id="colTagSpend" />
-            <TableColumn text="Quantity" fx:id="colQuantitySpend" />
+            <TableColumn text="ID" fx:id="colIdSpend" prefWidth="50" />
+            <TableColumn text="Name" fx:id="colNameSpend" prefWidth="150" />
+            <TableColumn text="Money" fx:id="colMoneySpend" prefWidth="100" />
+            <TableColumn text="Date" fx:id="colDateSpend" prefWidth="100" />
+            <TableColumn text="Tag" fx:id="colTagSpend" prefWidth="100" />
+            <TableColumn text="Quantity" fx:id="colQuantitySpend" prefWidth="100" />
         </columns>
     </TableView>
 
     <!-- Income -->
-    <TableView fx:id="tableIncome">
+    <TableView fx:id="tableIncome" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn text="ID" fx:id="colIdIncome" />
-            <TableColumn text="Name" fx:id="colNameIncome" />
-            <TableColumn text="Money" fx:id="colMoneyIncome" />
-            <TableColumn text="Date" fx:id="colDateIncome" />
-            <TableColumn text="Tag" fx:id="colTagIncome" />
+            <TableColumn text="ID" fx:id="colIdIncome" prefWidth="50" />
+            <TableColumn text="Name" fx:id="colNameIncome" prefWidth="150" />
+            <TableColumn text="Money" fx:id="colMoneyIncome" prefWidth="100" />
+            <TableColumn text="Date" fx:id="colDateIncome" prefWidth="100" />
+            <TableColumn text="Tag" fx:id="colTagIncome" prefWidth="100" />
         </columns>
     </TableView>
 
@@ -36,5 +36,6 @@
         <Button text="Añadir Gasto" onAction="#onAddSpend" />
         <Button text="Añadir Ingreso" onAction="#onAddIncome" />
         <Button text="Añadir Etiqueta" onAction="#onAddTag" />
+        <Button text="Refrescar Datos" onAction="#onRefreshData" />
     </HBox>
 </VBox>

@@ -1,9 +1,15 @@
 com\openjfx\dao\IncomeDAO.class
 com\openjfx\App.class
-com\openjfx\models\Tag.class
 com\openjfx\dao\TagDAO.class
 com\openjfx\models\Spend.class
-com\openjfx\controllers\MainController.class
 com\openjfx\dao\SpendDAO.class
 com\openjfx\models\Database.class
+com\openjfx\controllers\MainController$1$1.class
+com\openjfx\models\Tag.class
+com\openjfx\controllers\AddIncomeController.class
+com\openjfx\controllers\AddTagController.class
+com\openjfx\controllers\MainController$2.class
+com\openjfx\controllers\MainController$2$1.class
+com\openjfx\controllers\MainController.class
+com\openjfx\controllers\MainController$1.class
 com\openjfx\models\Income.class

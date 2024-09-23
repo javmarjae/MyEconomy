@@ -7,11 +7,20 @@ import com.openjfx.dao.IncomeDAO;
 import com.openjfx.dao.SpendDAO;
 import com.openjfx.dao.TagDAO;
 
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.util.Callback;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -81,6 +90,26 @@ public class MainController {
         colDateIncome.setCellValueFactory(new PropertyValueFactory<>("date"));
         colTagIncome.setCellValueFactory(new PropertyValueFactory<>("tag"));
 
+        colTagIncome.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        colTagIncome.setCellFactory(new Callback<TableColumn<Income, Tag>, TableCell<Income, Tag>>() {
+            @Override
+            public TableCell<Income, Tag> call(TableColumn<Income, Tag> param) {
+                return new TableCell<Income, Tag>() {
+                    @Override
+                    protected void updateItem(Tag tag, boolean empty) {
+                        super.updateItem(tag, empty);
+                        if (empty || tag == null) {
+                            setText(null);
+                            setStyle("");
+                        } else {
+                            setText(tag.getName());
+                            setStyle("-fx-background-color: " + tag.getColor() + ";"); // Establece el color de fondo
+                        }
+                    }
+                };
+            }
+        });
+
         // Spend columns
         colIdSpend.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNameSpend.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -88,6 +117,26 @@ public class MainController {
         colDateSpend.setCellValueFactory(new PropertyValueFactory<>("date"));
         colTagSpend.setCellValueFactory(new PropertyValueFactory<>("tag"));
         colQuantitySpend.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        colTagSpend.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        colTagSpend.setCellFactory(new Callback<TableColumn<Spend, Tag>, TableCell<Spend, Tag>>() {
+            @Override
+            public TableCell<Spend, Tag> call(TableColumn<Spend, Tag> param) {
+                return new TableCell<Spend, Tag>() {
+                    @Override
+                    protected void updateItem(Tag tag, boolean empty) {
+                        super.updateItem(tag, empty);
+                        if (empty || tag == null) {
+                            setText(null);
+                            setStyle("");
+                        } else {
+                            setText(tag.getName());
+                            setStyle("-fx-background-color: " + tag.getColor() + ";"); // Establece el color de fondo
+                        }
+                    }
+                };
+            }
+        });
 
         // Load
         loadData();
@@ -114,14 +163,36 @@ public class MainController {
     // Add Income
     @FXML
     private void onAddIncome(ActionEvent event) {
-        // Lógica para abrir la ventana de añadir ingreso
-        System.out.println("Añadir Ingreso");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/openjfx/AddIncome.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Añadir Ingreso");
+            stage.setScene(new Scene(root, 400, 300));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // Add Tag
     @FXML
     private void onAddTag(ActionEvent event) {
-        // Lógica para abrir la ventana de añadir tag
-        System.out.println("Añadir Etiqueta");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/openjfx/AddTag.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Añadir Etiqueta");
+            stage.setScene(new Scene(root, 400, 300));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onRefreshData(ActionEvent event) {
+        loadData();
+        System.out.println("Datos refrescados");
     }
 }
